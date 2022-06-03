@@ -5,32 +5,44 @@
  */
 package paquete04;
 
+import java.io.Serializable;
+
 /**
  *
  * @author reroes
  */
-public class Ciudad {
-    private String ciudad;
-    private String provincia;
+public class Ciudad implements Serializable {
+
+    private String nombreCiudad;
+    private String nombreProvincia;
 
     public Ciudad(String a, String s) {
-        ciudad = a;
-        provincia = s;
+        nombreCiudad = a;
+        nombreProvincia = s;
     }
 
     public void establecerNombre(String n) {
-        ciudad = n;
+        nombreCiudad = n;
     }
 
     public void establecerProvincia(String n) {
-        provincia = n;
+        nombreProvincia = n;
     }
 
     public String obtenerNombre() {
-        return ciudad;
+        return nombreCiudad;
     }
 
     public String obtenerProvincia() {
-        return provincia;
+        return nombreProvincia;
+    }
+
+    @Override
+    public String toString() {
+        String cadena = String.format("Nombre de la Ciudad: %s\nNombre de la"
+                + " provincia: %s",
+                nombreCiudad,
+                nombreProvincia);
+        return cadena;
     }
 }

@@ -5,6 +5,7 @@
  */
 package paquete06;
 
+import java.io.Serializable;
 import paquete02.Propietario;
 import paquete03.Barrio;
 import paquete04.Ciudad;
@@ -14,29 +15,140 @@ import paquete05.Constructora;
  *
  * @author reroes
  */
-public class Casa {
+public class Casa implements Serializable {
 
-    String propietario;
-    String apellidos;
-    String identificacion;
-    String constructora;
-    String barrio;
-    String referencia;
-    String ciudad;
-    String edificio;
-    String ubicacion;
-    String provincia ;
-    
-    
-    int numeroMetros;
-    double costoFinal;
-    double precioMetro;
-    int id;
-    double cuotaMensual;
-    int numeroCuartos;
+    private Propietario propietario;
+    private double precioMetro;
+    private double numeroMetros;
+    private double costoFinal;
+    private Barrio barrio;
+    private Ciudad ciudad;
+    private int numeroCuartos;
+    private Constructora constructora;
 
-    Propietario pro = new Propietario(propietario, apellidos, identificacion);
-    Barrio bar = new Barrio(barrio, referencia);
-    Ciudad ciu = new Ciudad(ciudad, provincia);
-    Constructora cons = new Constructora(constructora, id);
+    public Casa(Propietario prop, double precio, double numero, Barrio barr,
+            Ciudad ciud, int cuartos, Constructora construc) {
+
+        propietario = prop;
+        precioMetro = precio;
+        numeroMetros = numero;
+        barrio = barr;
+        ciudad = ciud;
+        numeroCuartos = cuartos;
+        constructora = construc;
+
+    }
+    // Establecer -------------------------------------------------------->>
+
+    public void establecerPropietario(Propietario n) {
+
+        propietario = n;
+    }
+
+    public void establecerPrecioMetro(double n) {
+
+        precioMetro = n;
+    }
+
+    public void establecerNumeroMetros(double n) {
+
+        numeroMetros = n;
+    }
+
+    public void establecerBarrio(Barrio n) {
+
+        barrio = n;
+    }
+
+    public void establecerCiudad(Ciudad n) {
+
+        ciudad = n;
+    }
+
+    public void establecerNumeroCuartos(int n) {
+
+        numeroCuartos = n;
+    }
+
+    public void establecerConstructora(Constructora n) {
+
+        constructora = n;
+    }
+
+    public void calcularCostoFinal(double n) {
+
+        costoFinal = numeroMetros * precioMetro;
+    }
+
+    // Obtener -------------------------------------------------------->>
+    
+    public Propietario obtenerPropietario() {
+
+        return propietario;
+    }
+
+    public double obtenerPrecioMetro() {
+
+        return precioMetro;
+    }
+
+    public double obtenerNumeroMetros() {
+
+        return numeroMetros;
+    }
+
+    public Barrio obtenerBarrio() {
+
+        return barrio;
+    }
+
+    public Ciudad obtenerCiudad() {
+
+        return ciudad;
+    }
+
+    public int obtenerNumeroCuartos() {
+
+        return numeroCuartos;
+    }
+
+    public Constructora obtenerConstructora() {
+
+        return constructora;
+    }
+
+    public double obtenerCostoFinal() {
+
+        return costoFinal;
+    }
+
+    @Override
+    public String toString() {
+        String salto = "--------------------------------------------------";
+        String cadena = String.format("%s\n-REGISTRO-\n\nDatos del Propietario:\n"
+                + "Nombres del propietario: %s\nApellidos del Propietario: %s\n"
+                + "Identificacion del propietario: %s\n\nDatos del Barrio:\n"
+                + "Nombre del Barrio: %s\nReferencia del Barrio: %s\n\nDatos de"
+                + " la ciudad:\nNombre de la ciudad: %s\nNombre de la provincia:"
+                + " %s\n\nDatos de la Constructora:\nNombre de la constructora:"
+                + " %s\nNombre del ID de la constructor: %s\n\nValores acerca "
+                + "de la vivienda:\nPrecio del Metro cuadrado: %.2f\nNumero de "
+                + "Metros cuadrado: %.2f\nNumero de cuartos: %d\nCosto final a "
+                + "depositar: %.2f\n", salto,
+                propietario.obtenerNombre(),
+                propietario.obtenerApellido(),
+                propietario.obtenerIdentificacion(),
+                barrio.obtenerNombre(),
+                barrio.obtenerReferencia(),
+                ciudad.obtenerNombre(),
+                ciudad.obtenerProvincia(),
+                constructora.obtenerConstructora(),
+                constructora.obtenerID(),
+                precioMetro,
+                numeroMetros,
+                numeroCuartos,
+                costoFinal);
+
+        return cadena;
+    }
 }

@@ -5,32 +5,44 @@
  */
 package paquete05;
 
+import java.io.Serializable;
+
 /**
  *
  * @author reroes
  */
-public class Constructora {
-    private String constructora;
-    private int id;
+public class Constructora implements Serializable {
 
-    public Constructora(String a, int s) {
-        constructora = a;
-        id = s;
+    private String nombreConstructora;
+    private String idConstructora;
+
+    public Constructora(String a, String s) {
+        nombreConstructora = a;
+        idConstructora = s;
     }
 
     public void establecerConstructora(String n) {
-        constructora = n;
+        nombreConstructora = n;
     }
 
-    public void establecerID(int n) {
-        id = n;
+    public void establecerID(String n) {
+        idConstructora = n;
     }
 
     public String obtenerConstructora() {
-        return constructora;
+        return nombreConstructora;
     }
 
-    public int obtenerID() {
-        return id;
+    public String obtenerID() {
+        return idConstructora;
+    }
+
+    @Override
+    public String toString() {
+        String cadena = String.format("Nombre de la Constructora: %s\nNombre del"
+                + " ID de la Constructora %s\n",
+                nombreConstructora,
+                idConstructora);
+        return cadena;
     }
 }
