@@ -21,19 +21,21 @@ public class Ciudad implements Serializable {
         nombreProvincia = s;
     }
 
-    public void establecerNombre(String n) {
+    // Establecer ---------------------------------------------------->
+    public void setNombre(String n) {
         nombreCiudad = n;
     }
 
-    public void establecerProvincia(String n) {
+    public void setProvincia(String n) {
         nombreProvincia = n;
     }
 
-    public String obtenerNombre() {
+    // Obtener -------------------------------------------------------->
+    public String getNombre() {
         return nombreCiudad;
     }
 
-    public String obtenerProvincia() {
+    public String getProvincia() {
         return nombreProvincia;
     }
 

@@ -28,7 +28,9 @@ public class Departamento implements Serializable {
     private String ubicacionDepartamento;
     private Constructora constructora;
 
-    public Departamento(Propietario prop, double precio, double numero, double alicuota, Barrio barr, Ciudad ciud, String nombreEdi, String ubiDeparta, Constructora construc) {
+    public Departamento(Propietario prop, double precio, double numero,
+            double alicuota, Barrio barr, Ciudad ciud, String nombreEdi, 
+            String ubiDeparta, Constructora construc) {
 
         propietario = prop;
         precioMetro = precio;
@@ -44,52 +46,52 @@ public class Departamento implements Serializable {
 
     // Establecer -------------------------------------------------------->>
     
-    public void establecerPropietario(Propietario n) {
+    public void setPropietario(Propietario n) {
 
         propietario = n;
     }
 
-    public void establecerPrecioMetro(double n) {
+    public void setPrecioMetro(double n) {
 
         precioMetro = n;
     }
 
-    public void establecerNumeroMetros(double n) {
+    public void setNumeroMetros(double n) {
 
         numeroMetros = n;
     }
 
-    public void establecerAlicuotala(double n) {
+    public void setAlicuotala(double n) {
 
         alicuotala = n;
     }
 
-    public void establecerBarrio(Barrio n) {
+    public void setBarrio(Barrio n) {
 
         barrio = n;
     }
 
-    public void establecerCiudad(Ciudad n) {
+    public void setCiudad(Ciudad n) {
 
         ciudad = n;
     }
 
-    public void establecerNombreEdificio(String n) {
+    public void setNombreEdificio(String n) {
 
         nombreEdificio = n;
     }
 
-    public void establecerUbicacionDepartamento(String n) {
+    public void setUbicacionDepartamento(String n) {
 
         ubicacionDepartamento = n;
     }
 
-    public void establecerConstructora(Constructora n) {
+    public void setConstructora(Constructora n) {
 
         constructora = n;
     }
 
-    public void calcularCostoFinal(double n) {
+    public void setCostoFinal() {
         /*El costo final es igual al
         (número de metros * valor del metro cuadrado) 
         + (valor alícuota mensual * 12).*/
@@ -99,52 +101,52 @@ public class Departamento implements Serializable {
 
     // Obtener -------------------------------------------------------->>
     
-    public Propietario obtenerPropietario() {
+    public Propietario getPropietario() {
 
         return propietario;
     }
 
-    public double obtenerPrecioMetro() {
+    public double getPrecioMetro() {
 
         return precioMetro;
     }
 
-    public double obtenerNumeroMetros() {
+    public double getNumeroMetros() {
 
         return numeroMetros;
     }
 
-    public double obtenerAlicuotala() {
+    public double getAlicuotala() {
 
         return alicuotala;
     }
 
-    public Barrio obtenerBarrio() {
+    public Barrio getBarrio() {
 
         return barrio;
     }
 
-    public Ciudad obtenerCiudad() {
+    public Ciudad getCiudad() {
 
         return ciudad;
     }
 
-    public String obtenerNombreEdificio() {
+    public String getNombreEdificio() {
 
         return nombreEdificio;
     }
 
-    public String obtenerUbicacionDepartamento() {
+    public String getUbicacionDepartamento() {
 
         return ubicacionDepartamento;
     }
 
-    public Constructora obtenerConstructora() {
+    public Constructora getConstructora() {
 
         return constructora;
     }
 
-    public double obtenerCostoFinal() {
+    public double getCostoFinal() {
 
         return costoFinal;
     }
@@ -163,15 +165,15 @@ public class Departamento implements Serializable {
                 + "Metros cuadrado: %.2f\nNombre del edificio: %s\nUbicacion del "
                 + "departamento en el edificio: %s\nValor de la alicuota mensual"
                 + " :%.2f\nCosto final a depositar: %.2f\n", salto,
-                propietario.obtenerNombre(),
-                propietario.obtenerApellido(),
-                propietario.obtenerIdentificacion(),
-                barrio.obtenerNombre(),
-                barrio.obtenerReferencia(),
-                ciudad.obtenerNombre(),
-                ciudad.obtenerProvincia(),
-                constructora.obtenerConstructora(),
-                constructora.obtenerID(),
+                propietario.getNombre(),
+                propietario.getApellido(),
+                propietario.getIdentificacion(),
+                barrio.getNombre(),
+                barrio.getReferencia(),
+                ciudad.getNombre(),
+                ciudad.getProvincia(),
+                constructora.getNombreConstructora(),
+                constructora.getID(),
                 precioMetro,
                 numeroMetros,
                 nombreEdificio,

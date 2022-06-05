@@ -21,19 +21,21 @@ public class Constructora implements Serializable {
         idConstructora = s;
     }
 
-    public void establecerConstructora(String n) {
+    // Establecer -------------------------------------------------->
+    public void setConstructora(String n) {
         nombreConstructora = n;
     }
 
-    public void establecerID(String n) {
+    public void setID(String n) {
         idConstructora = n;
     }
 
-    public String obtenerConstructora() {
+    // Obtener ----------------------------------------------------->
+    public String getNombreConstructora() {
         return nombreConstructora;
     }
 
-    public String obtenerID() {
+    public String getID() {
         return idConstructora;
     }
 
