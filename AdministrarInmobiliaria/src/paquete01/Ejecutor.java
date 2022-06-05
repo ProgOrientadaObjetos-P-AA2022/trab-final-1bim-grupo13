@@ -31,6 +31,7 @@ public class Ejecutor {
 
         boolean bandera = true;
         int opcion;
+
         Propietario prop = null;
         Ciudad ciud = null;
         Barrio barr = null;
@@ -51,9 +52,9 @@ public class Ejecutor {
                     prop = new Propietario(nombrePropietario,
                             apellidosPropietario,
                             identificacion);
-                    EscrituraPropietario archivo3 = new EscrituraPropietario("propietarios.dat");
-                    archivo3.establecerRegistroPropietario(prop);
-                    archivo3.establecerSalidaPropietario();
+                    EscrituraPropietario a1 = new EscrituraPropietario("propietarios.dat");
+                    a1.establecerRegistroPropietario(prop);
+                    a1.establecerSalidaPropietario();
                     break;
 
                 case 2:
@@ -63,9 +64,9 @@ public class Ejecutor {
                             + "barrio");
                     String referencia = entry.nextLine();
                     barr = new Barrio(nombreBarrio, referencia);
-                    EscrituraBarrio archivo4 = new EscrituraBarrio("barrios.dat");
-                    archivo4.establecerRegistroBarrio(barr);
-                    archivo4.establecerSalidaBarrio();
+                    EscrituraBarrio a2 = new EscrituraBarrio("barrios.dat");
+                    a2.establecerRegistroBarrio(barr);
+                    a2.establecerSalidaBarrio();
                     break;
 
                 case 3:
@@ -75,9 +76,9 @@ public class Ejecutor {
                     String nombreProvincia = entry.nextLine();
 
                     ciud = new Ciudad(nombreCiudad, nombreProvincia);
-                    EscrituraCiudad archivo5 = new EscrituraCiudad("ciudades.dat");
-                    archivo5.establecerRegistroCiudad(ciud);
-                    archivo5.establecerSalidaCiudad();
+                    EscrituraCiudad a3 = new EscrituraCiudad("ciudades.dat");
+                    a3.establecerRegistroCiudad(ciud);
+                    a3.establecerSalidaCiudad();
                     break;
 
                 case 4:
@@ -88,15 +89,17 @@ public class Ejecutor {
 
                     construc = new Constructora(nombreConstructora,
                             idConstructora);
-                    EscrituraConstructora archivo6 = new EscrituraConstructora("constructoras.dat");
-                    archivo6.establecerRegistroConstructora(construc);
-                    archivo6.establecerSalidaConstructora();
+                    System.out.println(construc);
+                    EscrituraConstructora a4 = new EscrituraConstructora("constructoras.dat");
+                    a4.establecerRegistroConstructora(construc);
+                    a4.establecerSalidaConstructora();
                     break;
 
                 case 5:
-                    prop = buscarPro();
-                    barr = buscarBarr();
-                    ciud = buscarCiu();
+                    prop = buscadorPropietario();
+                    barr = buscadorBarrio();
+                    ciud = buscadorCiudad();
+                    construc = buscadorConstructora();
                     System.out.println("Ingrese el valor del precio del metro "
                             + "cuadrado");
                     double precioMetro = entry.nextDouble();
@@ -107,16 +110,17 @@ public class Ejecutor {
                     Casa casa = new Casa(prop, precioMetro, numeroMetros, barr,
                             ciud, numeroCuartos, construc);
                     casa.establecerCostoFinal();
-                    EscrituraCasa archivo = new EscrituraCasa("casas.dat");
-                    archivo.establecerRegistroCasa(casa);
-                    archivo.establecerSalidaCasa();
-                    
+                    EscrituraCasa a5 = new EscrituraCasa("casas.dat");
+                    a5.establecerRegistroCasa(casa);
+                    a5.establecerSalidaCasa();
+
                     break;
 
                 case 6:
-                    prop = buscarPro();
-                    barr = buscarBarr();
-                    ciud = buscarCiu();
+                    prop = buscadorPropietario();
+                    barr = buscadorBarrio();
+                    ciud = buscadorCiudad();
+                    construc = buscadorConstructora();
                     System.out.println("Ingrese el valor del precio del metro "
                             + "cuadrado");
                     precioMetro = entry.nextDouble();
@@ -133,9 +137,9 @@ public class Ejecutor {
                             numeroMetros, alicuota, barr, ciud, nombreEdificio,
                             ubiEdificio, construc);
                     departamento.establecerCostoFinal();
-                    EscrituraDepartamento archivo2 = new EscrituraDepartamento("departamentos.dat");
-                    archivo2.establecerRegistroDepartamento(departamento);
-                    archivo2.establecerSalidaDepartamento();
+                    EscrituraDepartamento a6 = new EscrituraDepartamento("departamentos.dat");
+                    a6.establecerRegistroDepartamento(departamento);
+                    a6.establecerSalidaDepartamento();
                     break;
 
                 case 7:
@@ -202,50 +206,50 @@ public class Ejecutor {
     public static void crearListaDeDatos(int opcion) {
         switch (opcion) {
             case 1:
-                LecturaArchivo lectura3 = new LecturaArchivo("propietarios.dat");
-                lectura3.establecerListaPropietarios();
-                System.out.printf("%s", lectura3.MostrarEnPantallaPropietarios());
-                lectura3.cerrarArchivo();
+                LecturaArchivo l1 = new LecturaArchivo("propietarios.dat");
+                l1.establecerListaPropietarios();
+                System.out.printf("%s", l1.MostrarEnPantallaPropietarios());
+                l1.cerrarArchivo();
                 break;
 
             case 2:
-                LecturaArchivo lectura4 = new LecturaArchivo("barrios.dat");
-                lectura4.establecerListaBarrios();
-                System.out.printf("%s", lectura4.MostrarEnPantallaBarrios());
-                lectura4.cerrarArchivo();
+                LecturaArchivo l2 = new LecturaArchivo("barrios.dat");
+                l2.establecerListaBarrios();
+                System.out.printf("%s", l2.MostrarEnPantallaBarrios());
+                l2.cerrarArchivo();
                 break;
 
             case 3:
-                LecturaArchivo lectura5 = new LecturaArchivo("ciudades.dat");
-                lectura5.establecerListaCiudades();
-                System.out.printf("%s", lectura5.MostrarEnPantallaCiudades());
-                lectura5.cerrarArchivo();
+                LecturaArchivo l3 = new LecturaArchivo("ciudades.dat");
+                l3.establecerListaCiudades();
+                System.out.printf("%s", l3.MostrarEnPantallaCiudades());
+                l3.cerrarArchivo();
                 break;
             case 4:
-                LecturaArchivo lectura6 = new LecturaArchivo("constructoras.dat");
-                lectura6.establecerListaConstructoras();
-                System.out.printf("%s", lectura6.MostrarEnPantallaConstructoras());
-                lectura6.cerrarArchivo();
+                LecturaArchivo l4 = new LecturaArchivo("constructoras.dat");
+                l4.establecerListaConstructoras();
+                System.out.printf("%s", l4.MostrarEnPantallaConstructoras());
+                l4.cerrarArchivo();
                 break;
 
             case 5:
-                LecturaArchivo lectura = new LecturaArchivo("casas.dat");
-                lectura.establecerListaCasas();
-                System.out.printf("%s", lectura.MostrarEnPantallaCasas());
-                lectura.cerrarArchivo();
+                LecturaArchivo l5 = new LecturaArchivo("casas.dat");
+                l5.establecerListaCasas();
+                System.out.printf("%s", l5.MostrarEnPantallaCasas());
+                l5.cerrarArchivo();
                 break;
 
             case 6:
-                LecturaArchivo lectura2 = new LecturaArchivo("departamentos.dat");
-                lectura2.establecerListaDepartamentos();
-                System.out.printf("%s", lectura2.MostrarEnPantallaDepartamentos());
-                lectura2.cerrarArchivo();
+                LecturaArchivo l6 = new LecturaArchivo("departamentos.dat");
+                l6.establecerListaDepartamentos();
+                System.out.printf("%s", l6.MostrarEnPantallaDepartamentos());
+                l6.cerrarArchivo();
                 break;
 
         }
     }
 
-    public static Propietario buscarPro() {
+    public static Propietario buscadorPropietario() {
         Scanner sc = new Scanner(System.in);
         String identificacion;
         String nombres;
@@ -254,10 +258,10 @@ public class Ejecutor {
         System.out.println("Ingrese identifiacion del propietario: ");
         identificacion = sc.nextLine();
         Propietario propietarioBuscar;
-        LecturaArchivo lectura = new LecturaArchivo(nombreArchivo);
-        lectura.establecerIdentificador(identificacion);
-        lectura.establecerPropietarioBuscado();
-        propietarioBuscar = lectura.obtenerPropietarioBuscado();
+        Buscar b = new Buscar(nombreArchivo);
+        b.establecerIdentificador(identificacion);
+        b.establecerPropietarioBuscado();
+        propietarioBuscar = b.obtenerPropietarioBuscado();
         if (propietarioBuscar != null) {
             System.out.printf("Propietario encontrado %s\n", propietarioBuscar);
             return propietarioBuscar;
@@ -269,15 +273,15 @@ public class Ejecutor {
             apellidos = sc.nextLine();
             System.out.println("Ingrese identificacion del propietario: ");
             identificacion = sc.nextLine();
-            Propietario p = new Propietario(nombres, apellidos, identificacion);
+            Propietario prop = new Propietario(nombres, apellidos, identificacion);
             EscrituraPropietario archivo = new EscrituraPropietario(nombreArchivo);
-            archivo.establecerRegistroPropietario(p);
+            archivo.establecerRegistroPropietario(prop);
             archivo.establecerSalidaPropietario();
-            return p;
+            return prop;
         }
     }
 
-    public static Barrio buscarBarr() {
+    public static Barrio buscadorBarrio() {
         Scanner sc = new Scanner(System.in);
         String nombreBarrio;
         String referencia;
@@ -285,10 +289,10 @@ public class Ejecutor {
         System.out.println("Ingrese nombre del barrio: ");
         nombreBarrio = sc.nextLine();
         Barrio barrioBuscar;
-        LecturaArchivo lectura = new LecturaArchivo(nombreArchivo);
-        lectura.establecerIdentificador(nombreBarrio);
-        lectura.establecerBarrioBuscado();
-        barrioBuscar = lectura.obtenerBarrioBuscado();
+        Buscar b = new Buscar(nombreArchivo);
+        b.establecerIdentificador(nombreBarrio);
+        b.establecerBarrioBuscado();
+        barrioBuscar = b.obtenerBarrioBuscado();
         if (barrioBuscar != null) {
             System.out.printf("Barrio encontrado %s\n", barrioBuscar);
             return barrioBuscar;
@@ -298,15 +302,15 @@ public class Ejecutor {
             nombreBarrio = sc.nextLine();
             System.out.println("Ingrese referencia: ");
             referencia = sc.nextLine();
-            Barrio b = new Barrio(nombreBarrio, referencia);
+            Barrio barr = new Barrio(nombreBarrio, referencia);
             EscrituraBarrio archivo2 = new EscrituraBarrio(nombreArchivo);
-            archivo2.establecerRegistroBarrio(b);
+            archivo2.establecerRegistroBarrio(barr);
             archivo2.establecerSalidaBarrio();
-            return b;
+            return barr;
         }
     }
 
-    public static Ciudad buscarCiu() {
+    public static Ciudad buscadorCiudad() {
         Scanner sc = new Scanner(System.in);
         String nombreCiudad;
         String nombreProvincia;
@@ -314,10 +318,10 @@ public class Ejecutor {
         System.out.println("Ingrese nombre ciudad: ");
         nombreCiudad = sc.nextLine();
         Ciudad ciudadBuscar;
-        LecturaArchivo lectura = new LecturaArchivo(nombreArchivo);
-        lectura.establecerIdentificador(nombreCiudad);
-        lectura.establecerCiudadBuscado();
-        ciudadBuscar = lectura.obtenerCiudadBuscado();
+        Buscar b = new Buscar(nombreArchivo);
+        b.establecerIdentificador(nombreCiudad);
+        b.establecerCiudadBuscado();
+        ciudadBuscar = b.obtenerCiudadBuscado();
         if (ciudadBuscar != null) {
             System.out.printf("Ciudad encontrada %s\n", ciudadBuscar);
             return ciudadBuscar;
@@ -327,15 +331,15 @@ public class Ejecutor {
             nombreCiudad = sc.nextLine();
             System.out.println("Ingrese nombre de la provincia: ");
             nombreProvincia = sc.nextLine();
-            Ciudad c = new Ciudad(nombreCiudad, nombreProvincia);
+            Ciudad ciud = new Ciudad(nombreCiudad, nombreProvincia);
             EscrituraCiudad archivo = new EscrituraCiudad(nombreArchivo);
-            archivo.establecerRegistroCiudad(c);
+            archivo.establecerRegistroCiudad(ciud);
             archivo.establecerSalidaCiudad();
-            return c;
+            return ciud;
         }
     }
 
-    public static Constructora buscarCons() {
+    public static Constructora buscadorConstructora() {
         Scanner sc = new Scanner(System.in);
         String nombreConstructora;
         String idConstructora;
@@ -343,10 +347,10 @@ public class Ejecutor {
         System.out.println("Ingrese id de la constructora: ");
         idConstructora = sc.nextLine();
         Constructora constructoraBuscar;
-        LecturaArchivo lectura = new LecturaArchivo(nombreArchivo);
-        lectura.establecerIdentificador(idConstructora);
-        lectura.establecerConstructoraBuscado();
-        constructoraBuscar = lectura.obtenerConstructoraBuscado();
+        Buscar b = new Buscar(nombreArchivo);
+        b.establecerIdentificador(idConstructora);
+        b.establecerConstructoraBuscado();
+        constructoraBuscar = b.obtenerConstructoraBuscado();
         if (constructoraBuscar != null) {
             System.out.printf("Constructora encontrada %s\n", constructoraBuscar);
             return constructoraBuscar;
@@ -356,11 +360,11 @@ public class Ejecutor {
             nombreConstructora = sc.nextLine();
             System.out.println("Ingrese id constructora: ");
             idConstructora = sc.nextLine();
-            Constructora cons = new Constructora(nombreConstructora, idConstructora);
+            Constructora construc = new Constructora(nombreConstructora, idConstructora);
             EscrituraConstructora archivo = new EscrituraConstructora(nombreArchivo);
-            archivo.establecerRegistroConstructora(cons);
+            archivo.establecerRegistroConstructora(construc);
             archivo.establecerSalidaConstructora();
-            return cons;
+            return construc;
         }
     }
 
