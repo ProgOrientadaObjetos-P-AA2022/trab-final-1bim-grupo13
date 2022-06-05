@@ -32,11 +32,7 @@ public class LecturaArchivo {
     private ArrayList<Constructora> constructoras;
     private String nombreArchivo;
 
-    private String identificador;
-    private Propietario propietarioBuscado;
-    private Ciudad ciudadBuscado;
-    private Barrio barrioBuscado;
-    private Constructora constructoraBuscado;
+
 
     public LecturaArchivo(String n) {
         nombreArchivo = n;
@@ -242,144 +238,15 @@ public class LecturaArchivo {
         }
     }
 
-    public void establecerIdentificador(String n) {
-        identificador = n;
-    }
-
-    public String obtenerIdentificador() {
-        return identificador;
-    }
-
-    public void establecerPropietarioBuscado() {
-        File f = new File(obtenerNombreArchivo());
-        if (f.exists()) {
-
-            while (true) {
-                try {
-                    Propietario registro = (Propietario) entrada.readObject();
-                    if (registro.obtenerIdentificacion().equals(identificador)) {
-                        propietarioBuscado = registro;
-                        break;
-                    }
-
-                } catch (EOFException endOfFileException) {
-                    return;
-                } catch (IOException ex) {
-                    System.err.println("Error al leer el archivo: " + ex);
-                } catch (ClassNotFoundException ex) {
-                    System.err.println("No se pudo crear el objeto: " + ex);
-                } catch (Exception ex) {
-                    System.err.println("No hay datos en el archivo: " + ex);
-
-                }
-            }
-        }
-    }
-
-    public void establecerBarrioBuscado() {
-        // 
-        File f = new File(obtenerNombreArchivo());
-        if (f.exists()) {
-
-            while (true) {
-                try {
-                    Barrio registro = (Barrio) entrada.readObject();
-                    if (registro.obtenerNombre().equals(identificador)) {
-                        barrioBuscado = registro;
-                        break;
-                    }
-
-                } catch (EOFException endOfFileException) {
-                    return;
-                } catch (IOException ex) {
-                    System.err.println("Error al leer el archivo: " + ex);
-                } catch (ClassNotFoundException ex) {
-                    System.err.println("No se pudo crear el objeto: " + ex);
-                } catch (Exception ex) {
-                    System.err.println("No hay datos en el archivo: " + ex);
-
-                }
-            }
-        }
-    }
-
-    public void establecerCiudadBuscado() {
-        // 
-        File f = new File(obtenerNombreArchivo());
-        if (f.exists()) {
-
-            while (true) {
-                try {
-                    Ciudad registro = (Ciudad) entrada.readObject();
-                    if (registro.obtenerNombre().equals(identificador)) {
-                        ciudadBuscado = registro;
-                        break;
-                    }
-
-                } catch (EOFException endOfFileException) {
-                    return;
-                } catch (IOException ex) {
-                    System.err.println("Error al leer el archivo: " + ex);
-                } catch (ClassNotFoundException ex) {
-                    System.err.println("No se pudo crear el objeto: " + ex);
-                } catch (Exception ex) {
-                    System.err.println("No hay datos en el archivo: " + ex);
-
-                }
-            }
-        }
-    }
-
-    public void establecerConstructoraBuscado() {
-        // 
-        File f = new File(obtenerNombreArchivo());
-        if (f.exists()) {
-
-            while (true) {
-                try {
-                    Constructora registro = (Constructora) entrada.readObject();
-                    if (registro.obtenerID().equals(identificador)) {
-                        constructoraBuscado = registro;
-                        break;
-                    }
-                } catch (EOFException endOfFileException) {
-                    return;
-
-                } catch (IOException ex) {
-                    System.err.println("Error al leer el archivo: " + ex);
-                } catch (ClassNotFoundException ex) {
-                    System.err.println("No se pudo crear el objeto: " + ex);
-                } catch (Exception ex) {
-                    System.err.println("No hay datos en el archivo: " + ex);
-
-                }
-            }
-        }
-    }
-
-    public Propietario obtenerPropietarioBuscado() {
-        return propietarioBuscado;
-    }
-
-    public Barrio obtenerBarrioBuscado() {
-        return barrioBuscado;
-    }
-
-    public Ciudad obtenerCiudadBuscado() {
-        return ciudadBuscado;
-    }
-
-    public Constructora obtenerConstructoraBuscado() {
-        return constructoraBuscado;
-    }
+    
 
     // -----------------------------------------------------------------------
     public String MostrarEnPantallaPropietarios() {
         String cadena = "******************\n"
                 + "Listado De Propitearios Ingresados:\n";
         for (int i = 0; i < propietarios.size(); i++) {
-            cadena = String.format("%s(Propiteario Numero %d)/nNombres Del "
-                    + "Propiteario: %s/nApellidos Del Propiteario: %s\n"
+            cadena = String.format("%s(Propiteario Numero %d)\nNombres Del "
+                    + "Propiteario: %s\nApellidos Del Propiteario: %s\n"
                     + "Identificacion Del Propiteario(Cedula): %s\n",
                     cadena,
                     i + 1,
@@ -423,7 +290,7 @@ public class LecturaArchivo {
                 + "Listado De Constructoras Ingresadas:\n";
         for (int i = 0; i < constructoras.size(); i++) {
             cadena = String.format("%s(Constructora Numero %d)\nNombre De La "
-                    + "Constructora: %s/n Id De La Constructora %s\n",
+                    + "Constructora: %s\n Id De La Constructora %s\n",
                     cadena,
                     i + 1,
                     constructoras.get(i).obtenerNombreConstructora(),
@@ -436,13 +303,13 @@ public class LecturaArchivo {
         String cadena = "******************\n"
                 + "Listado De Casas Ingresadas\n";
         for (int i = 0; i < casas.size(); i++) {
-            Casa c = casas.get(i);
+            Casa casa = casas.get(i);
             cadena = String.format("%sCasa Numero %d\nInformacion Basica De"
                     + "La Casa:\nDatos Del Propietario Encontrado O Ingresado\n"
                     + "Nombres: %s\nApellidos: %s\nIdentificacion: %s\n"
                     + "Datos Del Barrio Encontrado O Ingresado\nNombre Del "
                     + "Barrio Del Propietario: %s\nReferencia Para Hallar El "
-                    + "Barrio %s/nDatos De La Ciudad Encontrada O Ingresada\n"
+                    + "Barrio %s\nDatos De La Ciudad Encontrada O Ingresada\n"
                     + "Nombre De La Ciudad: %s\nNombre De La Provincia: %s\n"
                     + "Datos De La Constructora Ingresados O Encontrados\n"
                     + "Nombre De La Constructora: \nID De La constructora: "
@@ -451,6 +318,7 @@ public class LecturaArchivo {
                     + "Cuartos: %d\nCosto final: %.2f\n"      , 
                     cadena, 
                     (i + 1),
+<<<<<<< HEAD
                     c.obtenerPropietario().obtenerNombre(),
                     c.obtenerPropietario().obtenerApellido(), 
                     c.obtenerPropietario().obtenerIdentificacion(),
@@ -464,6 +332,21 @@ public class LecturaArchivo {
                     c.obtenerNumeroMetros(), 
                     c.obtenerNumeroCuartos(), 
                     c.obtenerCostoFinal());                                     
+=======
+                    casa.obtenerPropietario().obtenerNombre(),
+                    casa.obtenerPropietario().obtenerApellido(), 
+                    casa.obtenerPropietario().obtenerIdentificacion(),
+                    casa.obtenerBarrio().obtenerNombre(),
+                    casa.obtenerBarrio().obtenerReferencia(),                   
+                    casa.obtenerCiudad().obtenerNombre(),
+                    casa.obtenerCiudad().obtenerProvincia(),                   
+                    casa.obtenerConstructora().obtenerNombreConstructora(), 
+                    casa.obtenerConstructora().obtenerID(),
+                    casa.obtenerPrecioMetro(), 
+                    casa.obtenerNumeroMetros(), 
+                    casa.obtenerNumeroCuartos(), 
+                    casa.obtenerCostoFinal());                                     
+>>>>>>> e2889d12b500fe706581cdf03e90ca4b5cc3d054
 
         }
         return cadena;
@@ -478,14 +361,14 @@ public class LecturaArchivo {
                     + "O Ingresado\nNombres: %s\nApellidos: %s\nIdentificacion: "
                     + "%s\nDatos Del Barrio Encontrado O Ingresado\nNombre Del "
                     + "Barrio Del Propietario: %s\nReferencia Para Hallar El "
-                    + "Barrio %s/nDatos De La Ciudad Encontrada O Ingresada\n"
+                    + "Barrio %s\nDatos De La Ciudad Encontrada O Ingresada\n"
                     + "Nombre De La Ciudad: %s\nNombre De La Provincia: %s\n"
                     + "Datos De La Constructora Ingresados O Encontrados\n"
                     + "Nombre De La Constructora: %s\nID De La constructora: "
                     + "%s\nCaracteriticas De La Departamento\n"
-                    + "\tNombre Edificio: %s Ubicación Edificio: %s\n"
-                    + "\tPrecio por metro cuadrado: %.2f Numero de metros cuadrados: %.2f\n"
-                    + "\tValor Alícuota Mensual: %.2f Costo final: %.2f\n",
+                    + "Nombre Edificio: %s\nUbicación Edificio: %s\n"
+                    + "Precio por metro cuadrado: %.2f Numero de metros cuadrados: %.2f\n"
+                    + "Valor Alícuota Mensual: %.2f\nCosto final: %.2f\n",
                     cadena, 
                     i + 1,
                     departamentos.get(i).obtenerPropietario().obtenerNombre(), 

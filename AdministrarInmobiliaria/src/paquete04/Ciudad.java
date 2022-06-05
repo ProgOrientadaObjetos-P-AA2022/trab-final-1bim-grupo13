@@ -42,7 +42,7 @@ public class Ciudad implements Serializable {
     @Override
     public String toString() {
         String cadena = String.format("Nombre de la Ciudad: %s\nNombre de la"
-                + " provincia: %s",
+                + " provincia: %s\n",
                 nombreCiudad,
                 nombreProvincia);
         return cadena;
