@@ -445,8 +445,8 @@ public class LecturaArchivo {
                     + "Barrio %s/nDatos De La Ciudad Encontrada O Ingresada\n"
                     + "Nombre De La Ciudad: %s\nNombre De La Provincia: %s\n"
                     + "Datos De La Constructora Ingresados O Encontrados\n"
-                    + "Nombre De La Constructora: %s\nID De La constructora: "
-                    + "%s\nCaracteriticas De La Casa\nPrecio Del Metro Cuadrado:"
+                    + "Nombre De La Constructora: \nID De La constructora: "
+                    + "%s\nCaracteristicas De La Casa\nPrecio Del Metro Cuadrado:"
                     + " %.2f\nNumero De Metros Cuadrados: %.2f\nNumero De "
                     + "Cuartos: %d\nCosto final: %.2f\n"      , 
                     cadena, 
@@ -458,7 +458,7 @@ public class LecturaArchivo {
                     c.obtenerBarrio().obtenerReferencia(),                   
                     c.obtenerCiudad().obtenerNombre(),
                     c.obtenerCiudad().obtenerProvincia(),                   
-                    c.obtenerConstructora().obtenerNombreConstructora(), 
+                   
                     c.obtenerConstructora().obtenerID(),
                     c.obtenerPrecioMetro(), 
                     c.obtenerNumeroMetros(), 

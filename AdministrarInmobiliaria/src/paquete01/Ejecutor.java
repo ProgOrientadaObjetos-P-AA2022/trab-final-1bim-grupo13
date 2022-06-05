@@ -97,6 +97,7 @@ public class Ejecutor {
                     prop = buscarPro();
                     barr = buscarBarr();
                     ciud = buscarCiu();
+                    construc = buscarCons();
                     System.out.println("Ingrese el valor del precio del metro "
                             + "cuadrado");
                     double precioMetro = entry.nextDouble();
@@ -117,6 +118,7 @@ public class Ejecutor {
                     prop = buscarPro();
                     barr = buscarBarr();
                     ciud = buscarCiu();
+                    construc = buscarCons();
                     System.out.println("Ingrese el valor del precio del metro "
                             + "cuadrado");
                     precioMetro = entry.nextDouble();
