@@ -53,7 +53,7 @@ public class Propietario implements Serializable {
     public String toString() {
 
         String cadena = String.format("Nombre del Propietario: %s\nApellidos del"
-                + " Propietario: %s\nIdentificacion del Propietario:",
+                + " Propietario: %s\nIdentificacion del Propietario: %s\n",
                 nombrePropietario,
                 apellidosPropietario,
                 identificacion);

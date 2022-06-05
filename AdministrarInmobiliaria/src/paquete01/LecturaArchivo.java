@@ -245,8 +245,8 @@ public class LecturaArchivo {
         String cadena = "******************\n"
                 + "Listado De Propitearios Ingresados:\n";
         for (int i = 0; i < propietarios.size(); i++) {
-            cadena = String.format("%s(Propiteario Numero %d)/nNombres Del "
-                    + "Propiteario: %s/nApellidos Del Propiteario: %s\n"
+            cadena = String.format("%s(Propiteario Numero %d)\nNombres Del "
+                    + "Propiteario: %s\nApellidos Del Propiteario: %s\n"
                     + "Identificacion Del Propiteario(Cedula): %s\n",
                     cadena,
                     i + 1,
@@ -290,7 +290,7 @@ public class LecturaArchivo {
                 + "Listado De Constructoras Ingresadas:\n";
         for (int i = 0; i < constructoras.size(); i++) {
             cadena = String.format("%s(Constructora Numero %d)\nNombre De La "
-                    + "Constructora: %s/n Id De La Constructora %s\n",
+                    + "Constructora: %s\n Id De La Constructora %s\n",
                     cadena,
                     i + 1,
                     constructoras.get(i).obtenerNombreConstructora(),
@@ -303,13 +303,13 @@ public class LecturaArchivo {
         String cadena = "******************\n"
                 + "Listado De Casas Ingresadas\n";
         for (int i = 0; i < casas.size(); i++) {
-            Casa c = casas.get(i);
+            Casa casa = casas.get(i);
             cadena = String.format("%sCasa Numero %d\nInformacion Basica De"
                     + "La Casa:\nDatos Del Propietario Encontrado O Ingresado\n"
                     + "Nombres: %s\nApellidos: %s\nIdentificacion: %s\n"
                     + "Datos Del Barrio Encontrado O Ingresado\nNombre Del "
                     + "Barrio Del Propietario: %s\nReferencia Para Hallar El "
-                    + "Barrio %s/nDatos De La Ciudad Encontrada O Ingresada\n"
+                    + "Barrio %s\nDatos De La Ciudad Encontrada O Ingresada\n"
                     + "Nombre De La Ciudad: %s\nNombre De La Provincia: %s\n"
                     + "Datos De La Constructora Ingresados O Encontrados\n"
                     + "Nombre De La Constructora: %s\nID De La constructora: "
@@ -318,19 +318,19 @@ public class LecturaArchivo {
                     + "Cuartos: %d\nCosto final: %.2f\n"      , 
                     cadena, 
                     (i + 1),
-                    c.obtenerPropietario().obtenerNombre(),
-                    c.obtenerPropietario().obtenerApellido(), 
-                    c.obtenerPropietario().obtenerIdentificacion(),
-                    c.obtenerBarrio().obtenerNombre(),
-                    c.obtenerBarrio().obtenerReferencia(),                   
-                    c.obtenerCiudad().obtenerNombre(),
-                    c.obtenerCiudad().obtenerProvincia(),                   
-                    c.obtenerConstructora().obtenerNombreConstructora(), 
-                    c.obtenerConstructora().obtenerID(),
-                    c.obtenerPrecioMetro(), 
-                    c.obtenerNumeroMetros(), 
-                    c.obtenerNumeroCuartos(), 
-                    c.obtenerCostoFinal());                                     
+                    casa.obtenerPropietario().obtenerNombre(),
+                    casa.obtenerPropietario().obtenerApellido(), 
+                    casa.obtenerPropietario().obtenerIdentificacion(),
+                    casa.obtenerBarrio().obtenerNombre(),
+                    casa.obtenerBarrio().obtenerReferencia(),                   
+                    casa.obtenerCiudad().obtenerNombre(),
+                    casa.obtenerCiudad().obtenerProvincia(),                   
+                    casa.obtenerConstructora().obtenerNombreConstructora(), 
+                    casa.obtenerConstructora().obtenerID(),
+                    casa.obtenerPrecioMetro(), 
+                    casa.obtenerNumeroMetros(), 
+                    casa.obtenerNumeroCuartos(), 
+                    casa.obtenerCostoFinal());                                     
 
         }
         return cadena;
@@ -345,14 +345,14 @@ public class LecturaArchivo {
                     + "O Ingresado\nNombres: %s\nApellidos: %s\nIdentificacion: "
                     + "%s\nDatos Del Barrio Encontrado O Ingresado\nNombre Del "
                     + "Barrio Del Propietario: %s\nReferencia Para Hallar El "
-                    + "Barrio %s/nDatos De La Ciudad Encontrada O Ingresada\n"
+                    + "Barrio %s\nDatos De La Ciudad Encontrada O Ingresada\n"
                     + "Nombre De La Ciudad: %s\nNombre De La Provincia: %s\n"
                     + "Datos De La Constructora Ingresados O Encontrados\n"
                     + "Nombre De La Constructora: %s\nID De La constructora: "
                     + "%s\nCaracteriticas De La Departamento\n"
-                    + "\tNombre Edificio: %s Ubicación Edificio: %s\n"
-                    + "\tPrecio por metro cuadrado: %.2f Numero de metros cuadrados: %.2f\n"
-                    + "\tValor Alícuota Mensual: %.2f Costo final: %.2f\n",
+                    + "Nombre Edificio: %s\nUbicación Edificio: %s\n"
+                    + "Precio por metro cuadrado: %.2f Numero de metros cuadrados: %.2f\n"
+                    + "Valor Alícuota Mensual: %.2f\nCosto final: %.2f\n",
                     cadena, 
                     i + 1,
                     departamentos.get(i).obtenerPropietario().obtenerNombre(), 
