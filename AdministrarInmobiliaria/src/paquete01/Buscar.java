@@ -65,7 +65,7 @@ public class Buscar {
             while (true) {
                 try {
                     Propietario registro = (Propietario) entrada.readObject();
-                    if (registro.obtenerIdentificacion().equals(identificador)) {
+                    if (registro.obtenerIdentificacion().equals(identificador)){
                         propietarioBuscado = registro;
                         break;
                     }

@@ -243,9 +243,9 @@ public class Ejecutor {
         System.out.println("Ingrese el valor de la alicuota");
         double alicuota = entry.nextDouble();
         entry.nextLine();
-        System.out.println("Ingrese el nombre del edificio: ");
+        System.out.println("Ingrese el nombre del edificio");
         String nombreEdificio = entry.nextLine();
-        System.out.println("Ingrese la ubicacion del edificio: ");
+        System.out.println("Ingrese la ubicacion del edificio");
         String ubiEdificio = entry.nextLine();
         Departamento departamento = new Departamento(prop, precioMetro,
                 numeroMetros, alicuota, barr, ciud, nombreEdificio,
@@ -315,7 +315,8 @@ public class Ejecutor {
         String nombreArchivo = "propietarios.dat";
 
         do {
-            System.out.println("Ingrese La Identifiacion Del Propietario(Cedula)");
+            System.out.println("Ingrese La Identifiacion Del Propietario"
+                    + "(Cedula)");
             identificacion = entry.nextLine();
             Propietario propietarioBuscar;
             Buscar b = new Buscar(nombreArchivo);
@@ -324,7 +325,8 @@ public class Ejecutor {
             propietarioBuscar = b.obtenerPropietarioBuscado();
 
             if (propietarioBuscar != null) {
-                System.out.printf("Propietario encontrado\n%s\n", propietarioBuscar);
+                System.out.printf("Propietario encontrado\n%s\n", 
+                        propietarioBuscar);
                 bandera = false;
                 return propietarioBuscar;
             } else {
@@ -333,7 +335,8 @@ public class Ejecutor {
                         + "cualquier otra letra para continuar buscando");
                 String salida = entry.nextLine();
 
-                if (salida.equals("si") || salida.equals("Si") || salida.equals("SI")) {
+                if (salida.equals("si") || salida.equals("Si") || 
+                        salida.equals("SI")) {
 
                     System.out.println("Ingrese nombres del propietario");
                     nombres = entry.nextLine();
@@ -341,10 +344,11 @@ public class Ejecutor {
                     apellidos = entry.nextLine();
                     System.out.println("Ingrese identificacion del propietario");
                     identificacion = entry.nextLine();
-                    Propietario prop = new Propietario(nombres, apellidos, identificacion);
-                    EscrituraPropietario archivo = new EscrituraPropietario(nombreArchivo);
-                    archivo.establecerRegistroPropietario(prop);
-                    archivo.establecerSalidaPropietario();
+                    Propietario prop = new Propietario(nombres, apellidos,
+                            identificacion);
+                    EscrituraPropietario a = new EscrituraPropietario(nombreArchivo);
+                    a.establecerRegistroPropietario(prop);
+                    a.establecerSalidaPropietario();
                     propietarioBuscar = prop;
                     return propietarioBuscar;
                 }
