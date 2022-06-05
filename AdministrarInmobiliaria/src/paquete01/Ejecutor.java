@@ -52,8 +52,8 @@ public class Ejecutor {
                             apellidosPropietario,
                             identificacion);
                     EscrituraPropietario archivo3 = new EscrituraPropietario("propietarios.dat");
-                    archivo3.setRegistroPropietario(prop);
-                    archivo3.setSalidaPropietario();
+                    archivo3.establecerRegistroPropietario(prop);
+                    archivo3.establecerSalidaPropietario();
                     break;
 
                 case 2:
@@ -64,8 +64,8 @@ public class Ejecutor {
                     String referencia = entry.nextLine();
                     barr = new Barrio(nombreBarrio, referencia);
                     EscrituraBarrio archivo4 = new EscrituraBarrio("barrios.dat");
-                    archivo4.setRegistroBarrio(barr);
-                    archivo4.setSalidaBarrio();
+                    archivo4.establecerRegistroBarrio(barr);
+                    archivo4.establecerSalidaBarrio();
                     break;
 
                 case 3:
@@ -76,8 +76,8 @@ public class Ejecutor {
 
                     ciud = new Ciudad(nombreCiudad, nombreProvincia);
                     EscrituraCiudad archivo5 = new EscrituraCiudad("ciudades.dat");
-                    archivo5.setRegistroCiudad(ciud);
-                    archivo5.setSalidaCiudad();
+                    archivo5.establecerRegistroCiudad(ciud);
+                    archivo5.establecerSalidaCiudad();
                     break;
 
                 case 4:
@@ -89,8 +89,8 @@ public class Ejecutor {
                     construc = new Constructora(nombreConstructora,
                             idConstructora);
                     EscrituraConstructora archivo6 = new EscrituraConstructora("constructoras.dat");
-                    archivo6.setRegistroConstructora(construc);
-                    archivo6.setSalidaConstructora();
+                    archivo6.establecerRegistroConstructora(construc);
+                    archivo6.establecerSalidaConstructora();
                     break;
 
                 case 5:
@@ -106,10 +106,11 @@ public class Ejecutor {
                     int numeroCuartos = entry.nextInt();
                     Casa casa = new Casa(prop, precioMetro, numeroMetros, barr,
                             ciud, numeroCuartos, construc);
-                    casa.setCostoFinal();
+                    casa.establecerCostoFinal();
                     EscrituraCasa archivo = new EscrituraCasa("casas.dat");
-                    archivo.setRegistroCasa(casa);
-                    archivo.setSalidaCasa();
+                    archivo.establecerRegistroCasa(casa);
+                    archivo.establecerSalidaCasa();
+                    
                     break;
 
                 case 6:
@@ -131,10 +132,10 @@ public class Ejecutor {
                     Departamento departamento = new Departamento(prop, precioMetro,
                             numeroMetros, alicuota, barr, ciud, nombreEdificio,
                             ubiEdificio, construc);
-                    departamento.setCostoFinal();
+                    departamento.establecerCostoFinal();
                     EscrituraDepartamento archivo2 = new EscrituraDepartamento("departamentos.dat");
-                    archivo2.setRegistroDepartamento(departamento);
-                    archivo2.setSalidaDepartamento();
+                    archivo2.establecerRegistroDepartamento(departamento);
+                    archivo2.establecerSalidaDepartamento();
                     break;
 
                 case 7:
@@ -202,41 +203,41 @@ public class Ejecutor {
         switch (opcion) {
             case 1:
                 LecturaArchivo lectura3 = new LecturaArchivo("propietarios.dat");
-                lectura3.setListaPropietarios();
+                lectura3.establecerListaPropietarios();
                 System.out.printf("%s", lectura3.MostrarEnPantallaPropietarios());
                 lectura3.cerrarArchivo();
                 break;
 
             case 2:
                 LecturaArchivo lectura4 = new LecturaArchivo("barrios.dat");
-                lectura4.setListaBarrios();
+                lectura4.establecerListaBarrios();
                 System.out.printf("%s", lectura4.MostrarEnPantallaBarrios());
                 lectura4.cerrarArchivo();
                 break;
 
             case 3:
                 LecturaArchivo lectura5 = new LecturaArchivo("ciudades.dat");
-                lectura5.setListaCiudades();
+                lectura5.establecerListaCiudades();
                 System.out.printf("%s", lectura5.MostrarEnPantallaCiudades());
                 lectura5.cerrarArchivo();
                 break;
             case 4:
                 LecturaArchivo lectura6 = new LecturaArchivo("constructoras.dat");
-                lectura6.setListaConstructoras();
+                lectura6.establecerListaConstructoras();
                 System.out.printf("%s", lectura6.MostrarEnPantallaConstructoras());
                 lectura6.cerrarArchivo();
                 break;
 
             case 5:
                 LecturaArchivo lectura = new LecturaArchivo("casas.dat");
-                lectura.setListaCasas();
+                lectura.establecerListaCasas();
                 System.out.printf("%s", lectura.MostrarEnPantallaCasas());
                 lectura.cerrarArchivo();
                 break;
 
             case 6:
                 LecturaArchivo lectura2 = new LecturaArchivo("departamentos.dat");
-                lectura2.setListaDepartamentos();
+                lectura2.establecerListaDepartamentos();
                 System.out.printf("%s", lectura2.MostrarEnPantallaDepartamentos());
                 lectura2.cerrarArchivo();
                 break;
@@ -254,9 +255,9 @@ public class Ejecutor {
         identificacion = sc.nextLine();
         Propietario propietarioBuscar;
         LecturaArchivo lectura = new LecturaArchivo(nombreArchivo);
-        lectura.setIdentificador(identificacion);
-        lectura.setPropietarioBuscado();
-        propietarioBuscar = lectura.getPropietarioBuscado();
+        lectura.establecerIdentificador(identificacion);
+        lectura.establecerPropietarioBuscado();
+        propietarioBuscar = lectura.obtenerPropietarioBuscado();
         if (propietarioBuscar != null) {
             System.out.printf("Propietario encontrado %s\n", propietarioBuscar);
             return propietarioBuscar;
@@ -270,8 +271,8 @@ public class Ejecutor {
             identificacion = sc.nextLine();
             Propietario p = new Propietario(nombres, apellidos, identificacion);
             EscrituraPropietario archivo = new EscrituraPropietario(nombreArchivo);
-            archivo.setRegistroPropietario(p);
-            archivo.setSalidaPropietario();
+            archivo.establecerRegistroPropietario(p);
+            archivo.establecerSalidaPropietario();
             return p;
         }
     }
@@ -285,9 +286,9 @@ public class Ejecutor {
         nombreBarrio = sc.nextLine();
         Barrio barrioBuscar;
         LecturaArchivo lectura = new LecturaArchivo(nombreArchivo);
-        lectura.setIdentificador(nombreBarrio);
-        lectura.setBarrioBuscado();
-        barrioBuscar = lectura.getBarrioBuscado();
+        lectura.establecerIdentificador(nombreBarrio);
+        lectura.establecerBarrioBuscado();
+        barrioBuscar = lectura.obtenerBarrioBuscado();
         if (barrioBuscar != null) {
             System.out.printf("Barrio encontrado %s\n", barrioBuscar);
             return barrioBuscar;
@@ -299,8 +300,8 @@ public class Ejecutor {
             referencia = sc.nextLine();
             Barrio b = new Barrio(nombreBarrio, referencia);
             EscrituraBarrio archivo2 = new EscrituraBarrio(nombreArchivo);
-            archivo2.setRegistroBarrio(b);
-            archivo2.setSalidaBarrio();
+            archivo2.establecerRegistroBarrio(b);
+            archivo2.establecerSalidaBarrio();
             return b;
         }
     }
@@ -314,9 +315,9 @@ public class Ejecutor {
         nombreCiudad = sc.nextLine();
         Ciudad ciudadBuscar;
         LecturaArchivo lectura = new LecturaArchivo(nombreArchivo);
-        lectura.setIdentificador(nombreCiudad);
-        lectura.setCiudadBuscado();
-        ciudadBuscar = lectura.getCiudadBuscado();
+        lectura.establecerIdentificador(nombreCiudad);
+        lectura.establecerCiudadBuscado();
+        ciudadBuscar = lectura.obtenerCiudadBuscado();
         if (ciudadBuscar != null) {
             System.out.printf("Ciudad encontrada %s\n", ciudadBuscar);
             return ciudadBuscar;
@@ -328,8 +329,8 @@ public class Ejecutor {
             nombreProvincia = sc.nextLine();
             Ciudad c = new Ciudad(nombreCiudad, nombreProvincia);
             EscrituraCiudad archivo = new EscrituraCiudad(nombreArchivo);
-            archivo.setRegistroCiudad(c);
-            archivo.setSalidaCiudad();
+            archivo.establecerRegistroCiudad(c);
+            archivo.establecerSalidaCiudad();
             return c;
         }
     }
@@ -343,9 +344,9 @@ public class Ejecutor {
         idConstructora = sc.nextLine();
         Constructora constructoraBuscar;
         LecturaArchivo lectura = new LecturaArchivo(nombreArchivo);
-        lectura.setIdentificador(idConstructora);
-        lectura.setConstructoraBuscado();
-        constructoraBuscar = lectura.getConstructoraBuscado();
+        lectura.establecerIdentificador(idConstructora);
+        lectura.establecerConstructoraBuscado();
+        constructoraBuscar = lectura.obtenerConstructoraBuscado();
         if (constructoraBuscar != null) {
             System.out.printf("Constructora encontrada %s\n", constructoraBuscar);
             return constructoraBuscar;
@@ -357,8 +358,8 @@ public class Ejecutor {
             idConstructora = sc.nextLine();
             Constructora cons = new Constructora(nombreConstructora, idConstructora);
             EscrituraConstructora archivo = new EscrituraConstructora(nombreArchivo);
-            archivo.setRegistroConstructora(cons);
-            archivo.setSalidaConstructora();
+            archivo.establecerRegistroConstructora(cons);
+            archivo.establecerSalidaConstructora();
             return cons;
         }
     }

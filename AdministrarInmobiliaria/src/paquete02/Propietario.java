@@ -24,28 +24,28 @@ public class Propietario implements Serializable {
     }
 
     // Establecer ---------------------------------------------------->
-    public void setNombre(String n) {
+    public void establecerNombre(String n) {
         nombrePropietario = n;
     }
 
-    public void setApellidos(String n) {
+    public void establecerApellidos(String n) {
         apellidosPropietario = n;
     }
 
-    public void setIdentificacion(String n) {
+    public void establecerIdentificacion(String n) {
         identificacion = n;
     }
 
     // Obtener ---------------------------------------------------->
-    public String getNombre() {
+    public String obtenerNombre() {
         return nombrePropietario;
     }
 
-    public String getApellido() {
+    public String obtenerApellido() {
         return apellidosPropietario;
     }
 
-    public String getIdentificacion() {
+    public String obtenerIdentificacion() {
         return identificacion;
     }
 

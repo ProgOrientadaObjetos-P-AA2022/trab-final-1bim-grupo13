@@ -22,20 +22,20 @@ public class Ciudad implements Serializable {
     }
 
     // Establecer ---------------------------------------------------->
-    public void setNombre(String n) {
+    public void establecerNombre(String n) {
         nombreCiudad = n;
     }
 
-    public void setProvincia(String n) {
+    public void establecerProvincia(String n) {
         nombreProvincia = n;
     }
 
     // Obtener -------------------------------------------------------->
-    public String getNombre() {
+    public String obtenerNombre() {
         return nombreCiudad;
     }
 
-    public String getProvincia() {
+    public String obtenerProvincia() {
         return nombreProvincia;
     }
 

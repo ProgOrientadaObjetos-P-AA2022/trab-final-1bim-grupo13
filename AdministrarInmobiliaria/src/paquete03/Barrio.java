@@ -21,19 +21,19 @@ public class Barrio implements Serializable {
     }
 
     // Establecer ----------------------------------------------------->
-    public void setNombre(String n) {
+    public void establecerNombre(String n) {
         nombreBarrio = n;
     }
 
-    public void setReferencia(String n) {
+    public void establecerReferencia(String n) {
         nombreReferencia = n;
     }
     // Obtener --------------------------------------------------------->
-    public String getNombre() {
+    public String obtenerNombre() {
         return nombreBarrio;
     }
 
-    public String getReferencia() {
+    public String obtenerReferencia() {
         return nombreReferencia;
     }
     

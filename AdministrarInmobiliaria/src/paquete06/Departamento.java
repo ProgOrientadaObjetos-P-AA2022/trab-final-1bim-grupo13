@@ -46,52 +46,52 @@ public class Departamento implements Serializable {
 
     // Establecer -------------------------------------------------------->>
     
-    public void setPropietario(Propietario n) {
+    public void establecerPropietario(Propietario n) {
 
         propietario = n;
     }
 
-    public void setPrecioMetro(double n) {
+    public void establecerPrecioMetro(double n) {
 
         precioMetro = n;
     }
 
-    public void setNumeroMetros(double n) {
+    public void establecerNumeroMetros(double n) {
 
         numeroMetros = n;
     }
 
-    public void setAlicuotala(double n) {
+    public void establecerAlicuotala(double n) {
 
         alicuotala = n;
     }
 
-    public void setBarrio(Barrio n) {
+    public void establecerBarrio(Barrio n) {
 
         barrio = n;
     }
 
-    public void setCiudad(Ciudad n) {
+    public void establecerCiudad(Ciudad n) {
 
         ciudad = n;
     }
 
-    public void setNombreEdificio(String n) {
+    public void establecerNombreEdificio(String n) {
 
         nombreEdificio = n;
     }
 
-    public void setUbicacionDepartamento(String n) {
+    public void establecerUbicacionDepartamento(String n) {
 
         ubicacionDepartamento = n;
     }
 
-    public void setConstructora(Constructora n) {
+    public void establecerConstructora(Constructora n) {
 
         constructora = n;
     }
 
-    public void setCostoFinal() {
+    public void establecerCostoFinal() {
         /*El costo final es igual al
         (número de metros * valor del metro cuadrado) 
         + (valor alícuota mensual * 12).*/
@@ -101,52 +101,52 @@ public class Departamento implements Serializable {
 
     // Obtener -------------------------------------------------------->>
     
-    public Propietario getPropietario() {
+    public Propietario obtenerPropietario() {
 
         return propietario;
     }
 
-    public double getPrecioMetro() {
+    public double obtenerPrecioMetro() {
 
         return precioMetro;
     }
 
-    public double getNumeroMetros() {
+    public double obtenerNumeroMetros() {
 
         return numeroMetros;
     }
 
-    public double getAlicuotala() {
+    public double obtenerAlicuotala() {
 
         return alicuotala;
     }
 
-    public Barrio getBarrio() {
+    public Barrio obtenerBarrio() {
 
         return barrio;
     }
 
-    public Ciudad getCiudad() {
+    public Ciudad obtenerCiudad() {
 
         return ciudad;
     }
 
-    public String getNombreEdificio() {
+    public String obtenerNombreEdificio() {
 
         return nombreEdificio;
     }
 
-    public String getUbicacionDepartamento() {
+    public String obtenerUbicacionDepartamento() {
 
         return ubicacionDepartamento;
     }
 
-    public Constructora getConstructora() {
+    public Constructora obtenerConstructora() {
 
         return constructora;
     }
 
-    public double getCostoFinal() {
+    public double obtenerCostoFinal() {
 
         return costoFinal;
     }
@@ -165,15 +165,15 @@ public class Departamento implements Serializable {
                 + "Metros cuadrado: %.2f\nNombre del edificio: %s\nUbicacion del "
                 + "departamento en el edificio: %s\nValor de la alicuota mensual"
                 + " :%.2f\nCosto final a depositar: %.2f\n", salto,
-                propietario.getNombre(),
-                propietario.getApellido(),
-                propietario.getIdentificacion(),
-                barrio.getNombre(),
-                barrio.getReferencia(),
-                ciudad.getNombre(),
-                ciudad.getProvincia(),
-                constructora.getNombreConstructora(),
-                constructora.getID(),
+                propietario.obtenerNombre(),
+                propietario.obtenerApellido(),
+                propietario.obtenerIdentificacion(),
+                barrio.obtenerNombre(),
+                barrio.obtenerReferencia(),
+                ciudad.obtenerNombre(),
+                ciudad.obtenerProvincia(),
+                constructora.obtenerNombreConstructora(),
+                constructora.obtenerID(),
                 precioMetro,
                 numeroMetros,
                 nombreEdificio,

@@ -40,84 +40,84 @@ public class Casa implements Serializable {
     }
     // Establecer -------------------------------------------------------->>
 
-    public void setPropietario(Propietario n) {
+    public void establecerPropietario(Propietario n) {
 
         propietario = n;
     }
 
-    public void setPrecioMetro(double n) {
+    public void establecerPrecioMetro(double n) {
 
         precioMetro = n;
     }
 
-    public void setNumeroMetros(double n) {
+    public void establecerNumeroMetros(double n) {
 
         numeroMetros = n;
     }
 
-    public void setBarrio(Barrio n) {
+    public void establecerBarrio(Barrio n) {
 
         barrio = n;
     }
 
-    public void setCiudad(Ciudad n) {
+    public void establecerCiudad(Ciudad n) {
 
         ciudad = n;
     }
 
-    public void setNumeroCuartos(int n) {
+    public void establecerNumeroCuartos(int n) {
 
         numeroCuartos = n;
     }
 
-    public void setConstructora(Constructora n) {
+    public void establecerConstructora(Constructora n) {
 
         constructora = n;
     }
 
-    public void setCostoFinal() {
+    public void establecerCostoFinal() {
 
         costoFinal = numeroMetros * precioMetro;
     }
 
     // Obtener -------------------------------------------------------->>
     
-    public Propietario getPropietario() {
+    public Propietario obtenerPropietario() {
 
         return propietario;
     }
 
-    public double getPrecioMetro() {
+    public double obtenerPrecioMetro() {
 
         return precioMetro;
     }
 
-    public double getNumeroMetros() {
+    public double obtenerNumeroMetros() {
 
         return numeroMetros;
     }
 
-    public Barrio getBarrio() {
+    public Barrio obtenerBarrio() {
 
         return barrio;
     }
 
-    public Ciudad getCiudad() {
+    public Ciudad obtenerCiudad() {
 
         return ciudad;
     }
 
-    public int getNumeroCuartos() {
+    public int obtenerNumeroCuartos() {
 
         return numeroCuartos;
     }
 
-    public Constructora getConstructora() {
+    public Constructora obtenerConstructora() {
 
         return constructora;
     }
 
-    public double getCostoFinal() {
+    public double obtenerCostoFinal() {
 
         return costoFinal;
     }
@@ -135,15 +135,15 @@ public class Casa implements Serializable {
                 + "de la vivienda:\nPrecio del Metro cuadrado: %.2f\nNumero de "
                 + "Metros cuadrado: %.2f\nNumero de cuartos: %d\nCosto final a "
                 + "depositar: %.2f\n", salto,
-                propietario.getNombre(),
-                propietario.getApellido(),
-                propietario.getIdentificacion(),
-                barrio.getNombre(),
-                barrio.getReferencia(),
-                ciudad.getNombre(),
-                ciudad.getProvincia(),
-                constructora.getNombreConstructora(),
-                constructora.getID(),
+                propietario.obtenerNombre(),
+                propietario.obtenerApellido(),
+                propietario.obtenerIdentificacion(),
+                barrio.obtenerNombre(),
+                barrio.obtenerReferencia(),
+                ciudad.obtenerNombre(),
+                ciudad.obtenerProvincia(),
+                constructora.obtenerNombreConstructora(),
+                constructora.obtenerID(),
                 precioMetro,
                 numeroMetros,
                 numeroCuartos,
