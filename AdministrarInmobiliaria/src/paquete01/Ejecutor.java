@@ -205,10 +205,10 @@ public class Ejecutor {
         Propietario prop;
         Barrio barr;
         Ciudad ciud;
+        Constructora construc;
         prop = buscadorPropietario();
         barr = buscadorBarrio();
         ciud = buscadorCiudad();
-        Constructora construc;
         construc = buscadorConstructora();
         System.out.println("Ingrese el valor del precio del metro "
                 + "cuadrado");
