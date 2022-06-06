@@ -32,123 +32,7 @@ public class Ejecutor {
         int opcionElegida;
 
         do {
-<<<<<<< HEAD
-            opcion = menuDeIngresoDeDatos();
 
-            switch (opcion) {
-
-                case 1:
-                    System.out.println("Ingrese los nombres del propietario");
-                    String nombrePropietario = entry.nextLine();
-                    System.out.println("Ingrese los apellidos del propietario");
-                    String apellidosPropietario = entry.nextLine();
-                    System.out.println("Ingrese la identificacion del propietario");
-                    String identificacion = entry.nextLine();
-                    prop = new Propietario(nombrePropietario,
-                            apellidosPropietario,
-                            identificacion);
-                    EscrituraPropietario archivo3 = new EscrituraPropietario("propietarios.dat");
-                    archivo3.establecerRegistroPropietario(prop);
-                    archivo3.establecerSalidaPropietario();
-                    break;
-
-                case 2:
-                    System.out.println("Ingrese el nombre del Barrio");
-                    String nombreBarrio = entry.nextLine();
-                    System.out.println("Ingrese una Referencia para hallar el "
-                            + "barrio");
-                    String referencia = entry.nextLine();
-                    barr = new Barrio(nombreBarrio, referencia);
-                    EscrituraBarrio archivo4 = new EscrituraBarrio("barrios.dat");
-                    archivo4.establecerRegistroBarrio(barr);
-                    archivo4.establecerSalidaBarrio();
-                    break;
-
-                case 3:
-                    System.out.println("Ingrese el nombre de la ciudad");
-                    String nombreCiudad = entry.nextLine();
-                    System.out.println("Ingrese el nombre de la provincia");
-                    String nombreProvincia = entry.nextLine();
-
-                    ciud = new Ciudad(nombreCiudad, nombreProvincia);
-                    EscrituraCiudad archivo5 = new EscrituraCiudad("ciudades.dat");
-                    archivo5.establecerRegistroCiudad(ciud);
-                    archivo5.establecerSalidaCiudad();
-                    break;
-
-                case 4:
-                    System.out.println("Ingrese el nombre de la constructora");
-                    String nombreConstructora = entry.nextLine();
-                    System.out.println("Ingrese el ID de la constructora");
-                    String idConstructora = entry.nextLine();
-
-                    construc = new Constructora(nombreConstructora,
-                            idConstructora);
-                    EscrituraConstructora archivo6 = new EscrituraConstructora("constructoras.dat");
-                    archivo6.establecerRegistroConstructora(construc);
-                    archivo6.establecerSalidaConstructora();
-                    break;
-
-                case 5:
-                    prop = buscarPro();
-                    barr = buscarBarr();
-                    ciud = buscarCiu();
-                    construc = buscarCons();
-                    System.out.println("Ingrese el valor del precio del metro "
-                            + "cuadrado");
-                    double precioMetro = entry.nextDouble();
-                    System.out.println("Ingrese el numero de metros cuadrados");
-                    double numeroMetros = entry.nextDouble();
-                    System.out.println("Ingrese el numero de cuartos");
-                    int numeroCuartos = entry.nextInt();
-                    Casa casa = new Casa(prop, precioMetro, numeroMetros, barr,
-                            ciud, numeroCuartos, construc);
-                    casa.establecerCostoFinal();
-                    EscrituraCasa archivo = new EscrituraCasa("casas.dat");
-                    archivo.establecerRegistroCasa(casa);
-                    archivo.establecerSalidaCasa();
-                    
-                    break;
-
-                case 6:
-                    prop = buscarPro();
-                    barr = buscarBarr();
-                    ciud = buscarCiu();
-                    construc = buscarCons();
-                    System.out.println("Ingrese el valor del precio del metro "
-                            + "cuadrado");
-                    precioMetro = entry.nextDouble();
-                    System.out.println("Ingrese el numero de metros cuadrados");
-                    numeroMetros = entry.nextDouble();
-                    System.out.println("Ingrese el valor de la alicuota");
-                    double alicuota = entry.nextDouble();
-                    entry.nextLine();
-                    System.out.println("Ingrese el nombre del edificio: ");
-                    String nombreEdificio = entry.nextLine();
-                    System.out.println("Ingrese la ubicacion del edificio: ");
-                    String ubiEdificio = entry.nextLine();
-                    Departamento departamento = new Departamento(prop, precioMetro,
-                            numeroMetros, alicuota, barr, ciud, nombreEdificio,
-                            ubiEdificio, construc);
-                    departamento.establecerCostoFinal();
-                    EscrituraDepartamento archivo2 = new EscrituraDepartamento("departamentos.dat");
-                    archivo2.establecerRegistroDepartamento(departamento);
-                    archivo2.establecerSalidaDepartamento();
-                    break;
-
-                case 7:
-                    do {
-                        opcion = menuDeListaDeArchivos();
-                        crearListaDeDatos(opcion);
-
-                    } while (opcion != 0);
-                    opcion = 10;
-                    break;
-                case 8:
-                    System.out.println("Programa finalizado");
-                    bandera = false;
-                    break;
-=======
             opcion = interfaz();
             if (opcion == 1) {
                 opcionElegida = menuDeIngresoDeDatos();
@@ -186,7 +70,6 @@ public class Ejecutor {
 
                 }
 
->>>>>>> e2889d12b500fe706581cdf03e90ca4b5cc3d054
             }
 
         } while (bandera);
@@ -443,7 +326,7 @@ public class Ejecutor {
             propietarioBuscar = b.obtenerPropietarioBuscado();
 
             if (propietarioBuscar != null) {
-                System.out.printf("Propietario encontrado\n%s\n", 
+                System.out.printf("Propietario encontrado\n%s\n",
                         propietarioBuscar);
                 bandera = false;
                 return propietarioBuscar;
@@ -453,8 +336,8 @@ public class Ejecutor {
                         + "cualquier otra letra para continuar buscando");
                 String salida = entry.nextLine();
 
-                if (salida.equals("si") || salida.equals("Si") || 
-                        salida.equals("SI")) {
+                if (salida.equals("si") || salida.equals("Si")
+                        || salida.equals("SI")) {
 
                     System.out.println("Ingrese nombres del propietario");
                     nombres = entry.nextLine();

@@ -32,8 +32,6 @@ public class LecturaArchivo {
     private ArrayList<Constructora> constructoras;
     private String nombreArchivo;
 
-
-
     public LecturaArchivo(String n) {
         nombreArchivo = n;
         File f = new File(obtenerNombreArchivo());
@@ -238,8 +236,6 @@ public class LecturaArchivo {
         }
     }
 
-    
-
     // -----------------------------------------------------------------------
     public String MostrarEnPantallaPropietarios() {
         String cadena = "******************\n"
@@ -303,7 +299,7 @@ public class LecturaArchivo {
         String cadena = "******************\n"
                 + "Listado De Casas Ingresadas\n";
         for (int i = 0; i < casas.size(); i++) {
-            Casa casa = casas.get(i);
+            Casa c = casas.get(i);
             cadena = String.format("%sCasa Numero %d\nInformacion Basica De"
                     + "La Casa:\nDatos Del Propietario Encontrado O Ingresado\n"
                     + "Nombres: %s\nApellidos: %s\nIdentificacion: %s\n"
@@ -315,38 +311,21 @@ public class LecturaArchivo {
                     + "Nombre De La Constructora: \nID De La constructora: "
                     + "%s\nCaracteristicas De La Casa\nPrecio Del Metro Cuadrado:"
                     + " %.2f\nNumero De Metros Cuadrados: %.2f\nNumero De "
-                    + "Cuartos: %d\nCosto final: %.2f\n"      , 
-                    cadena, 
+                    + "Cuartos: %d\nCosto final: %.2f\n",
+                    cadena,
                     (i + 1),
-<<<<<<< HEAD
                     c.obtenerPropietario().obtenerNombre(),
-                    c.obtenerPropietario().obtenerApellido(), 
+                    c.obtenerPropietario().obtenerApellido(),
                     c.obtenerPropietario().obtenerIdentificacion(),
                     c.obtenerBarrio().obtenerNombre(),
-                    c.obtenerBarrio().obtenerReferencia(),                   
+                    c.obtenerBarrio().obtenerReferencia(),
                     c.obtenerCiudad().obtenerNombre(),
-                    c.obtenerCiudad().obtenerProvincia(),                   
-                   
+                    c.obtenerCiudad().obtenerProvincia(),
                     c.obtenerConstructora().obtenerID(),
-                    c.obtenerPrecioMetro(), 
-                    c.obtenerNumeroMetros(), 
-                    c.obtenerNumeroCuartos(), 
-                    c.obtenerCostoFinal());                                     
-=======
-                    casa.obtenerPropietario().obtenerNombre(),
-                    casa.obtenerPropietario().obtenerApellido(), 
-                    casa.obtenerPropietario().obtenerIdentificacion(),
-                    casa.obtenerBarrio().obtenerNombre(),
-                    casa.obtenerBarrio().obtenerReferencia(),                   
-                    casa.obtenerCiudad().obtenerNombre(),
-                    casa.obtenerCiudad().obtenerProvincia(),                   
-                    casa.obtenerConstructora().obtenerNombreConstructora(), 
-                    casa.obtenerConstructora().obtenerID(),
-                    casa.obtenerPrecioMetro(), 
-                    casa.obtenerNumeroMetros(), 
-                    casa.obtenerNumeroCuartos(), 
-                    casa.obtenerCostoFinal());                                     
->>>>>>> e2889d12b500fe706581cdf03e90ca4b5cc3d054
+                    c.obtenerPrecioMetro(),
+                    c.obtenerNumeroMetros(),
+                    c.obtenerNumeroCuartos(),
+                    c.obtenerCostoFinal());
 
         }
         return cadena;
@@ -369,25 +348,23 @@ public class LecturaArchivo {
                     + "Nombre Edificio: %s\nUbicación Edificio: %s\n"
                     + "Precio por metro cuadrado: %.2f Numero de metros cuadrados: %.2f\n"
                     + "Valor Alícuota Mensual: %.2f\nCosto final: %.2f\n",
-                    cadena, 
+                    cadena,
                     i + 1,
-                    departamentos.get(i).obtenerPropietario().obtenerNombre(), 
-                    departamentos.get(i).obtenerPropietario().obtenerApellido(), 
-                    departamentos.get(i).obtenerPropietario().obtenerIdentificacion(),     
+                    departamentos.get(i).obtenerPropietario().obtenerNombre(),
+                    departamentos.get(i).obtenerPropietario().obtenerApellido(),
+                    departamentos.get(i).obtenerPropietario().obtenerIdentificacion(),
                     departamentos.get(i).obtenerBarrio().obtenerNombre(),
                     departamentos.get(i).obtenerBarrio().obtenerReferencia(),
-                    departamentos.get(i).obtenerCiudad().obtenerNombre(), 
+                    departamentos.get(i).obtenerCiudad().obtenerNombre(),
                     departamentos.get(i).obtenerCiudad().obtenerProvincia(),
-                    departamentos.get(i).obtenerConstructora().obtenerNombreConstructora(), 
-                    departamentos.get(i).obtenerConstructora().obtenerID(),                   
-                    departamentos.get(i).obtenerNombreEdificio(), 
+                    departamentos.get(i).obtenerConstructora().obtenerNombreConstructora(),
+                    departamentos.get(i).obtenerConstructora().obtenerID(),
+                    departamentos.get(i).obtenerNombreEdificio(),
                     departamentos.get(i).obtenerUbicacionDepartamento(),
-                    departamentos.get(i).obtenerPrecioMetro(), 
+                    departamentos.get(i).obtenerPrecioMetro(),
                     departamentos.get(i).obtenerNumeroMetros(),
-                    departamentos.get(i).obtenerAlicuotala(), 
+                    departamentos.get(i).obtenerAlicuotala(),
                     departamentos.get(i).obtenerCostoFinal());
-
-
 
         }
         return cadena;
